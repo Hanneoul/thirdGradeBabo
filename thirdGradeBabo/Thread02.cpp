@@ -1,32 +1,43 @@
+
+
+
+//목요드라마 석 & 훈
+
 #include <iostream>
-#include <map>
-#include <string>
-#include <chrono>
 #include <thread>
 #include <mutex>
+#include <string>
+#include <chrono>
 
-std::map<std::string, std::string> g_pages;
-std::mutex g_pages_mutex;
+using namespace std;
 
-void save_page(const std::string& url)
+
+string taesu = "솔아..";
+mutex taesu_maum;
+
+void Propose(string my_name, string his_name)
 {
-    std::this_thread::sleep_for(std::chrono::seconds(2));
-    std::string result = "fake content";
-
-    //std::lock_guard<std::mutex> guard(g_pages_mutex);
-    g_pages_mutex.lock();
-    g_pages[url] = result;
-    g_pages_mutex.unlock();
+	cout << "\n\n";
+	cout << my_name << ": " << his_name << ".. 당신을 진심으로 사랑합니다.." << endl;
+	cout << my_name << ": "<< his_name <<"..날 가져줘.." << endl;
+	this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
-int main()
+void GetLove(string name)
 {
-    std::thread t1(save_page, "http://foo");
-    std::thread t2(save_page, "http://bar");
-    t1.join();
-    t2.join();
+	taesu_maum.lock();
+	taesu = name;
+	Propose("수", taesu);
+	this_thread::sleep_for(std::chrono::milliseconds(5000));//5년
+	cout << "수 :" << name << " 우리 헤어져";
+	taesu_maum.unlock();
+}
 
-    for (const auto& pair : g_pages) {
-        std::cout << pair.first << " => " << pair.second << '\n';
-    }
+void main() //Thread0 PD : 이은석 (main)
+{	
+	thread na_seok_hoon(GetLove, "석훈아.."); //Thread2
+	thread oh_jeong_seok(GetLove, "정석아.."); //Thread1 
+	
+	na_seok_hoon.join();	
+	oh_jeong_seok.join();
 }
