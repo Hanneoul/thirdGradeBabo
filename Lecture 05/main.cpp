@@ -1,8 +1,4 @@
-
-
-
 //목요드라마 석 & 훈
-
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -11,38 +7,60 @@
 
 using namespace std;
 
-
 class Actor
 {
-public:
-	
-	mutex heart;
+public:	
+	string name;
 	thread th;
-
+	mutex heart;
+	
 	Actor() {}
-	virtual void Run(){}
+	virtual void Start(Actor* actor) {}
+	virtual void Run(Actor* actor) {}
 };
 
 
 class Hoon : public Actor
 {
 public:
+	void(Hoon::*RunPointer)(Actor* actor);
+
 	Hoon()
 	{
-		RunPointer = &Hoon::Run;
-		th = thread(RunPointer, this);
-
-
-		th.join();
-		
+		name = "훈이";			
 	}
 
-	void(Hoon::* RunPointer)();
+	void Start(Actor* actor)
+	{
+		RunPointer = &Hoon::Run;
+		th = thread(RunPointer, this, actor);
+		th.join();
+	}
 
+	void Run(Actor* actor) {
+		FallinLove(actor);
+		Flirting(actor); 
+		Fuckyou(actor);
+	}
 
-	void Run() {
-		
-		cout << "테스트";
+	void FallinLove(Actor *actor)
+	{
+		this_thread::sleep_for(std::chrono::milliseconds(1000));		
+		cout << "훈 : (나 갑자기..." << actor->name << "을(를) 보니 너무 설렌다....)\n\n";
+		this_thread::sleep_for(std::chrono::milliseconds(1000));
+	}
+
+	void Flirting(Actor * actor)
+	{
+		this_thread::sleep_for(std::chrono::milliseconds(1000));
+		cout << "훈 : " << actor->name << "... 내방에서... 라면먹고갈래??\n\n";		
+	}
+
+	void Fuckyou(Actor* actor)
+	{
+		this_thread::sleep_for(std::chrono::milliseconds(1000));
+		cout << "훈 : (아..." << actor->name << "...정떨어져...\n\n";
+		this_thread::sleep_for(std::chrono::milliseconds(1000));		
 	}
 };
 
@@ -50,28 +68,28 @@ class Seok : public Actor
 {
 public:
 	Seok() {
-		
+		name = "석이";
 	}
 	
 	void Run() {}
 };
 
-class Soo : public Actor
+class Su : public Actor
 {
 public:
+	Su()
+	{
+		name = "수";
+	}
 	 void Run() {}
 };
 
 int main() //Thread0 PD : 이은석 (main)
 {
-	Hoon* h = new Hoon();
-
-	 //Thread2
-	//thread TSeok(GetLove, "정석아.."); //Thread1 
-	//thread TSoo(GetLove, "정석아.."); //Thread1 
-
-	//na_seok_hoon.join();
-	//oh_jeong_seok.join();
+	Actor* h = new Hoon();
+	
+	h->Start(???);
+	 
 	this_thread::sleep_for(std::chrono::milliseconds(1000));
 	delete(h);
 	
@@ -80,24 +98,4 @@ int main() //Thread0 PD : 이은석 (main)
 
 
 
-string taesu = "솔아..";
-mutex taesu_maum;
-
-void Propose(string my_name, string his_name)
-{
-	cout << "\n\n";
-	cout << my_name << ": " << his_name << ".. 당신을 진심으로 사랑합니다.." << endl;
-	cout << my_name << ": " << his_name << "..날 가져줘.." << endl;
-	this_thread::sleep_for(std::chrono::milliseconds(1000));
-}
-
-void GetLove(string name)
-{
-	taesu_maum.lock();
-	taesu = name;
-	Propose("수", taesu);
-	this_thread::sleep_for(std::chrono::milliseconds(5000));//5년
-	cout << "수 :" << name << " 우리 헤어져";
-	taesu_maum.unlock();
-}
 
