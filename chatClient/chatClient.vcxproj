@@ -24,6 +24,7 @@
     <ProjectGuid>{25e0e44f-e050-47e0-a4c6-cdf8ede64c5d}</ProjectGuid>
     <RootNamespace>chatClient</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SooClient</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

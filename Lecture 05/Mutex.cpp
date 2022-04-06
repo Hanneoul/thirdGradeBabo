@@ -1,7 +1,7 @@
 
 
 
-//목요드라마 석 & 훈
+//목요드라마 석 & 훈 Mutex
 
 #include <iostream>
 #include <thread>

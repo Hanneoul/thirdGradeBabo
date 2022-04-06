@@ -1,7 +1,4 @@
-
-
-
-//목요드라마 석 & 훈
+//목요드라마 석 & 훈 Thread & Mutex
 
 #include <iostream>
 #include <thread>
@@ -19,7 +16,7 @@ void Propose(string my_name, string his_name)
 {
 	cout << "\n\n";
 	cout << my_name << ": " << his_name << ".. 당신을 진심으로 사랑합니다.." << endl;
-	cout << my_name << ": "<< his_name <<"..날 가져줘.." << endl;
+	cout << my_name << ": " << his_name << "..날 가져줘.." << endl;
 	this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
@@ -34,10 +31,10 @@ void GetLove(string name)
 }
 
 void main() //Thread0 PD : 이은석 (main)
-{	
+{
 	thread na_seok_hoon(GetLove, "석훈아.."); //Thread2
 	thread oh_jeong_seok(GetLove, "정석아.."); //Thread1 
-	
-	na_seok_hoon.join();	
+
+	na_seok_hoon.join();
 	oh_jeong_seok.join();
 }
