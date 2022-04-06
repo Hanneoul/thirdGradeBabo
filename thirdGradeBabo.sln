@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture05", "Lecture 05\Lecture 05.vcxproj", "{C53086CD-DC32-4975-8F3E-CAFA8D4ADDAF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture05", "Lecture05\Lecture05.vcxproj", "{C53086CD-DC32-4975-8F3E-CAFA8D4ADDAF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture06_SooClient", "Lecture06\Lecture06.vcxproj", "{A7433E10-A290-43E7-AB6A-C73A8F0AC699}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture06Client", "Lecture06Client\Lecture06Client.vcxproj", "{A7433E10-A290-43E7-AB6A-C73A8F0AC699}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture06_JooServer", "JooServer\JooServer.vcxproj", "{B90A41BD-5939-4280-8DD6-29013AC719E4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture06Server", "Lecture06Server\Lecture06Server.vcxproj", "{B90A41BD-5939-4280-8DD6-29013AC719E4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture04", "Lecture04\Lecture04.vcxproj", "{AA79D1D6-6CD5-4EFD-894A-86709B997AE9}"
 EndProject
