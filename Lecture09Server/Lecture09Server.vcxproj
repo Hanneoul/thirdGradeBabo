@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3922e4d4-3db2-44e1-be3a-5f7f6586e82f}</ProjectGuid>
-    <RootNamespace>Lecture09Client</RootNamespace>
+    <ProjectGuid>{5e2aa923-7593-4360-948a-bbef3094f2e0}</ProjectGuid>
+    <RootNamespace>Lecture09Server</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lecture09Client.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="lib.hpp" />
+    <ClCompile Include="Lecture09Server.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
