@@ -33,6 +33,7 @@ char recvbuf[DEFAULT_BUFLEN];
 int iResult;
 int recvbuflen = DEFAULT_BUFLEN;
 
+queue<int> event_queue;
 
 int Init();
 int Input();
