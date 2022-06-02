@@ -19,7 +19,7 @@ int main(void)
 {
     WSADATA wsaData;
     int iResult;
-
+    
     SOCKET ListenSocket = INVALID_SOCKET;
     SOCKET ClientSocket = INVALID_SOCKET;
 
