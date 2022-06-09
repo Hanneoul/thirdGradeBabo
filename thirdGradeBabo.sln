@@ -23,7 +23,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture09Client", "Lecture0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lecture09Server", "Lecture09Server\Lecture09Server.vcxproj", "{5E2AA923-7593-4360-948A-BBEF3094F2E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture14", "Lecture14\Lecture14.csproj", "{184C5A50-3B08-4FF2-9C45-430080A035A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture14", "Lecture14\Lecture14.csproj", "{184C5A50-3B08-4FF2-9C45-430080A035A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F5C97A7-8824-4953-AEEC-4AD5F800FD9F}"
+	ProjectSection(SolutionItems) = preProject
+		GameObject.txt = GameObject.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
