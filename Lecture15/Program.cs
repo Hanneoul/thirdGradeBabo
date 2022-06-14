@@ -1,16 +1,26 @@
 ﻿using System.Net;
+using System.Threading;
 using System.Text.Json;
 
 
 namespace FinalTestSample
 {
+
+
     public class Listener
     {
     }
 
     public class ServerLoop
     {
+         public static void siba()
+        {
+
+        }
         public void Dispatch()
+        {
+            ThreadPool.QueueUserWorkItem(ServerLoop.siba);
+        }
     }
 
     public class Program
